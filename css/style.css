@@ -65,6 +65,7 @@ img{
     margin-left: 50px;
 }
 .site-nav .link{
+    position: relative;
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -84,6 +85,19 @@ img{
 .site-nav .link.current{
     color: var(--accent-color);
 }
+.current::after {
+    content: "";
+    position: absolute;
+    bottom:0;
+    right: 0;
+    
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+   
+    background-color: var(--accent-color);
+}
+    
 /* Аудентифікація */
 .auth-nav{
     display: flex;
@@ -251,7 +265,24 @@ img{
 .task .item + .item{
     margin-left: var(--main-distance-element);
 }
+.task-thumb{
+    position: relative;
+}
+.task-name{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 27px;
+    padding-bottom: 27px;
 
+    font-weight: 700;
+    line-height: 1.14;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--main-background-color);
+    background-color: rgba(47, 48, 58, 0.8);
+}
 /* Наша команда */
 .members{
     background-color:var(--button-background);
@@ -425,6 +456,8 @@ img{
 .work-link:hover .hover-text{
     opacity: 1;
 }
+/* Модальне вікно */
+
 /* Footer */
 .footer-elements{
     display: flex;
