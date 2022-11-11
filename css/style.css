@@ -208,7 +208,7 @@ img{
 
     transition-property: color,background-color,box-shadow ;
     transition-duration: var(--transition-time);
-        transition-timing-function: var(--timing-function);
+    transition-timing-function: var(--timing-function);
 }
 .filter .button:hover,
 .filter .button:focus {
@@ -296,6 +296,7 @@ img{
     text-align: center;
     text-transform: uppercase;
     color: var(--main-background-color);
+    
     background-color: rgba(47, 48, 58, 0.8);
 }
 /* Наша команда */
@@ -339,6 +340,7 @@ img{
 .social-list{
     display: flex;
     align-items: center;
+   
     margin-bottom: var(--main-distance-element);
     padding-left: 32px;
     padding-right: 32px;
@@ -349,7 +351,9 @@ img{
     align-items: center;
     width: 44px;
     height: 44px;
+    
     border-radius: 50%;
+    
     color:var(--primary-icon-color);
 
     transition-property: color, background-color;
@@ -380,6 +384,7 @@ img{
     align-items: center;
     width: 170px;
     height: 92px;
+    
     border: 1px solid var(--primary-icon-color);
     border-radius: 4px;
 
@@ -408,6 +413,7 @@ img{
 .filter{
     display: flex;
     justify-content: center;
+    
     margin-top: 0;
     margin-bottom: 50px;
 }
@@ -417,6 +423,7 @@ img{
 .work-list{
     display: flex;
     flex-wrap: wrap;
+    
     margin-left: -30px;
     margin-top: -30px;
     padding-left: 0; 
@@ -463,12 +470,14 @@ img{
 }
 .work-img{
     position: relative; 
+    
     overflow: hidden;  
 }
 .hover-text{
     position: absolute;
     bottom:0;
     left: 0;
+    
     padding: 63px 24px;
     width: 100%;
     height: 100%;
@@ -490,20 +499,34 @@ img{
     position: fixed;
     top:0;
     left: 0;
+    
     width: 100%;
     height: 100%;
 
+    opacity: 1;
+    transition-property:opacity;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--timing-function);
+    
     background-color: rgba(0, 0, 0, 0.2);
 }
 .backdrop.is-hidden{
     opacity: 0;
     pointer-events: none;
 }
+.backdrop.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(1.5);
+
+}
 .modal{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+
+    transform: translate(-50%, -50%) scale(1);
+    transition-property: transform;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--timing-function);
     
     min-width: 528px;
     min-height: 581px;
@@ -517,10 +540,10 @@ img{
     position: absolute;
     top:8px;
     right: 8px;
+   
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 30px;
     height: 30px;
     
@@ -567,12 +590,12 @@ img{
     transition-duration: var(--transition-time);
     transition-timing-function: var(--timing-function);
 }
+.site-connection .adress.link {
+    color: var(--main-background-color);
+}
 .site-connection .link:hover,
 .site-connection .link:focus {
     color: var(--accent-color);
-}
-.site-connection .adress.link {
-    color: var(--main-background-color);
 }
 .site-connection .item:not(:last-child) {
     margin-bottom: 9px;
@@ -590,8 +613,10 @@ img{
     align-items: center;
     width: 44px;
     height: 44px;
+    
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+    
     color: var(--main-background-color);
 
     transition-property: color, background-color;
@@ -607,14 +632,16 @@ img{
     margin-left: 10px;
 }
 .footer-connection .join{
+    margin-bottom: 20px;
+    margin-top: 12px;
+
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
     color: #FFFFFF;
 
-    margin-bottom: 20px;
-    margin-top: 12px;
+
 }
 /* Visually-hidden title */
 .visually-hidden{
